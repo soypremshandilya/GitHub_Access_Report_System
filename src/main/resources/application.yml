@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+github:
+  token: ${GITHUB_TOKEN:YOUR_GITHUB_TOKEN}
+  org: ${GITHUB_ORG:YOUR_ORG_NAME}
+  api:
+    base-url: https://api.github.com
+
+spring:
+  cache:
+    cache-names: github-repos, github-collabs
+    caffeine:
+      spec: maximumSize=500,expireAfterWrite=60s
